@@ -18,6 +18,7 @@ def unsafe_users(request, user_id):
     return HttpResponse(users)
 
 
+# http://127.0.0.1:8000/security/safe/users/1
 def safe_users(request, user_id):
     """Uses parameterised query so it's fine"""
 
