@@ -34,5 +34,5 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Django Security Check
-    - uses: victoriadrake/django-security-check@v1.1.0
+    # - name: Django Security Check
+    # - uses: victoriadrake/django-security-check@v1.1.0
