@@ -25,3 +25,5 @@ Contains examples of threats:
 - Insecure deserialization (unsafe use of Python `pickle`)
 
 - Cross-site scripting (XSS)
+
+- Server Side Tempalte Injection (SSTI)
