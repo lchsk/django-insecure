@@ -1,4 +1,4 @@
-from django.urls import re_path
+from django.urls import re_path,path
 
 from . import views
 
@@ -17,4 +17,7 @@ urlpatterns = [
     # XSS
     re_path('search', views.search, name='search'),
     re_path('log', views.log, name='log'),
+
+    # SSTI
+    path("ssti/", views.ssti, name="ssti")
 ]

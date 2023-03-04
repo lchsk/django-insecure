@@ -6,7 +6,7 @@ import base64
 
 from django.http import HttpResponse, JsonResponse
 from django.utils.safestring import mark_safe
-
+from django.template import engines
 from security.models import User
 
 
@@ -96,3 +96,10 @@ def log(request):
     print(string)
 
     return HttpResponse()
+
+def ssti(request):
+    engine = engines["django"]
+    template = engine.from_string(
+        "<html><body><form method=get><input name=inject><br><input type=submit></form><br>" + request.GET.get("inject") + "</body></html>")
+    return HttpResponse(template.render({}, request))
+
